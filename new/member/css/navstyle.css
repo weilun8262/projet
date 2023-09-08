@@ -1,0 +1,138 @@
+
+
+/* 飛天豬 */
+#flypig {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    background-image: url(../img/flypig.png);
+    background-position: center;
+    /*圖片位置*/
+    background-repeat: no-repeat;
+    /*圖片不重複*/
+    background-size: contain;
+    /*圖片大小*/
+    width: 100px;
+    height: 250px;
+    animation-name: flypig;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flypig {
+    0% {
+        transform: translatey(0px);
+    }
+
+    25% {
+        transform: translatey(-20px);
+    }
+
+    50% {
+        transform: translatey(-0px);
+    }
+
+    75% {
+        transform: translatey(-20px);
+    }
+
+    100% {
+        transform: translatey(-600px);
+    }
+
+}
+/* map 大小 */
+
+@media (min-width: 644px) {
+    .mapSize {
+        width: 644px;
+        height: 400px;
+    }
+
+}
+
+@media (max-width: 644px) {
+    .mapSize {
+        width: 90%;
+        height: 400px;
+    }
+}
+
+
+
+
+
+
+
+/* 下面選擇器 */
+.bot {
+    width: 80vw;
+    position: relative;
+}
+
+.box {
+    width: 80vw;
+    padding: 15px;
+    margin: 10px auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.box ul li {
+    text-indent: 10px;
+    width: 202px;
+    height: 250px;
+    border: 1px rgba(0, 0, 0, 0.248) solid;
+    border-radius: 20px 20px 20px 20px;
+    float: left;
+    position: relative;
+    transition: all .6s ease-out;
+}
+
+.box h3 {
+    color: #333;
+    font-size: 15px;
+    padding-top: 30px;
+}
+
+.box ul li img {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: all .6s ease-out;
+}
+
+.box ul .on {
+    width: 302px;
+    height: 250px;
+    text-align: left;
+    background-color: #3288e6;
+}
+
+.box ul .on h3 {
+    color: white;
+    padding-left: 20px;
+}
+
+.box ul .on p {
+    color: white;
+    padding-left: 20px;
+}
+
+.box ul .on img {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+

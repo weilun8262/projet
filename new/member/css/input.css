@@ -1,0 +1,97 @@
+body{
+    background-image: url(/img/123.gif);
+    /* opacity: 0.7; */
+}
+
+/* 登入畫面 */
+#layoutAuthentication {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  #layoutAuthentication #layoutAuthentication_content {
+    min-width: 0;
+    flex-grow: 1;
+  }
+  #layoutAuthentication #layoutAuthentication_footer {
+    min-width: 0;
+  }
+  
+  /* @media (min-width: 644px) {
+    input {
+        width: 644px;
+        height: 400px;
+    }
+
+}
+
+@media (max-width: 644px) {
+    input {
+        width: 90%;
+        height: 400px;
+    }
+} */
+
+
+
+/* 01. 改變滑鼠經過 radio 的樣式 */
+input[type="radio"] {
+    cursor: pointer;
+}
+
+/* 02-01. :valid 驗證通過時的樣式設定 */
+input[type="email"]:valid,
+input[type="text"]:valid,
+input[type="tel"]:valid,
+input[type="password"]:valid {
+    background-color: rgba(34, 255, 0, 0.196);
+}
+
+/* 02-02. :invalid 驗證不通過時的樣式設定 */
+input[type="email"]:invalid,
+input[type="text"]:invalid,
+input[type="tel"]:invalid,
+input[type="password"]:invalid {
+    background-color: rgba(255, 0, 0, 0.384);
+}
+
+/* 03-01. 驗證通過時 輸入框後面顯示 ✓ */
+input[type="email"]:valid+span::after,
+input[type="text"]:valid+span::after,
+input[type="tel"]:valid+span::after,
+input[type="password"]:valid+span::after {
+    color: #00ff2f;
+    content: "✓"
+}
+
+/* 03-02. 驗證不通過時 輸入框後面顯示 ✖ */
+input[type="email"]:invalid+span::after,
+input[type="text"]:invalid+span::after,
+input[type="tel"]:invalid+span::after,
+input[type="password"]:invalid+span::after {
+    color: #ff0000;
+    content: "✖";
+}
+
+/* 設定滑鼠移動至目標改變背景顏色 */
+input[type="email"]:hover,
+input[type="text"]:hover,
+input[type="tel"]:hover,
+input[type="password"]:hover {
+    background-color: rgb(59, 70, 59);
+}
+
+/* 04-01. 設定取得焦點的背景顏色greenyellow */
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus {
+    background-color: rgba(71, 77, 81, 0.364);
+}
+
+/* 04-02. 設定勾選時 label 顏色 blue */
+input[type="checkbox"]:checked+label {
+    color: blue;
+    font-size: large;
+
+}

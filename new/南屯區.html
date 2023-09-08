@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>食荒客-南屯區</title><!--網頁名稱 -->
+    <link href="./img/tos.png" rel="icon" type="image/png"><!--網頁圖片 -->
+
+    <link rel="stylesheet" href="./loading.css">
+    <link rel="stylesheet" href="./css/navstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">食荒客</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+        <!-- Navbar Search 右上搜尋美食部分-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="尋找美食" aria-label="Search for..."
+                    aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i
+                        class="fas fa-search"></i></button>
+            </div>
+        </form>
+        <!-- Navbar 右上人物圖形清單-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="login.html">登入</a></li>
+                    <li><a class="dropdown-item" href="register.html">立即註冊</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-------    左邊清單    -------->
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">各區美食瀏覽</div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            展開
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="./東區.html">東區</a>
+                                <a class="nav-link" href="./西區.html">西區</a>
+                                <a class="nav-link" href="./南區.html">南區</a>
+                                <a class="nav-link" href="./北區.html">北區</a>
+                                <a class="nav-link" href="./西屯區.html">西屯區</a>
+                                <a class="nav-link" href="./南屯區.html">南屯區</a>
+                                <a class="nav-link" href="./北屯區.html">北屯區</a>
+                                <a class="nav-link" href="./太平區.html">太平區</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+                            aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            個人資訊
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#pagesCollapseAuth" aria-expanded="false"
+                                    aria-controls="pagesCollapseAuth">
+                                    帳號管理
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                                    data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <!-- <a class="nav-link" href="register.html">Register</a> -->
+                                        <a class="nav-link" href="password.html">忘記密碼</a>
+                                    </nav>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- 漂浮部分飛天豬 -->
+        <div>
+            <a href="https://google.com">
+                <div id="flypig"></div>
+            </a>
+        </div>
+
+        <!-- 中間顯示部分 -->
+
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">美食大賞</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">精選美食</li>
+                    </ol>
+                    <div class="tab-content " style="width:400px;height:400px;">
+                        <div class="tab-pane" id="github">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16464.851515152088!2d120.63912139986759!3d24.145547859471304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d84733fb529%3A0x96d97e9ca47ccb2d!2z5aW95aW95ZCD6IKJ6Z-T5byP54Ok6IKJ5ZCD5Yiw6aO9LeWPsOS4reWFrOebiuW6lw!5e0!3m2!1szh-TW!2stw!4v1687316804874!5m2!1szh-TW!2stw"
+                                width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="six">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14562.222549754679!2d120.6447744580174!3d24.152238800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d3a8c6d39d7%3A0x82c1fbe4d77332f6!2z54mb5a6k54KZ54eS54mb5o6SQkVFRkhPVVNFIOWPsOS4reWkp-WiqeW6lw!5e0!3m2!1szh-TW!2stw!4v1687317888330!5m2!1szh-TW!2stw"
+                                    width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="le">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1315.33170460006!2d120.64757450702143!3d24.150662032492328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d5f457ffa5d%3A0x19491ae308439052!2z54eS6IKJ6aKo6ZaTIEthemFtYSB8IOWFrOebiuacrOW6lw!5e0!3m2!1szh-TW!2stw!4v1687318039202!5m2!1szh-TW!2stw"
+                                    width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="ten">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1315.3304254259508!2d120.64760140323317!3d24.150786302588866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d95c28d4a57%3A0x98c496d5a013c604!2z5YWr6LGG6aOf5bqc5aO95Zac54eS5bCI6ZaA5bqX!5e0!3m2!1szh-TW!2stw!4v1687318295665!5m2!1szh-TW!2stw"
+                                    width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="gpt">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14562.473646668706!2d120.6282733787376!3d24.150035499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693dc24653974d%3A0xba46f4b981c44f35!2z546L5a626aaZ54Gr6Zue6IKJ6aOv!5e0!3m2!1szh-TW!2stw!4v1687585366676!5m2!1szh-TW!2stw"
+                                    width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- 下方地點選擇部分 -->
+                    <section class="bot container-fluid">
+                        <div class="box row">
+                            <ul class="nav nav-fill nav-pills flex-md-row flex-column">
+
+                                <li class="on col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                                    <a href="#github" data-bs-toggle="pill" class="nav-link ">
+                                        <h3>好好吃肉韓式烤肉吃到飽-台中公益店</h3>
+                                        <p>408台中市南屯區大墩路632之3號</p>
+                                        <img src="img/好好吃肉.jpg">
+                                    </a>
+                                </li>
+
+                                <li class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                                    <a href="#six" data-bs-toggle="pill" class="nav-link ">
+                                        <h3>牛室炙燒牛排BEEFHOUSE 台中大墩店</h3>
+                                        <p>408台中市南屯區大墩路689號</p>
+                                        <img src="img/牛室.jpg">
+                                    </a>
+                                </li>
+
+                                <li class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                                    <a href="#le" data-bs-toggle="pill" class="nav-link ">
+                                        <h3>燒肉風間 Kazama | 公益本店</h3>
+                                        <p>408台中市南屯區公益路二段171-1號</p>
+                                        <img src="img/李家烤肉.jpg">
+                                    </a>
+                                </li>
+
+                                <li class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                                    <a href="#ten" data-bs-toggle="pill" class="nav-link ">
+                                        <h3>八豆食府壽喜燒專門店</h3>
+                                        <p>408台中市南屯區大光街162號</p>
+                                        <img src="./img/八豆.png">
+                                    </a>
+                                </li>
+
+
+                                <li class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                                    <a href="#gpt" data-bs-toggle="pill" class="nav-link ">
+                                        <h3>王家香火雞肉飯</h3>
+                                        <p>408台中市南屯區黎明路二段346號</p>
+                                        <img src="./img/王家香.png" />
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </section>
+                    <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+                    <script type="text/javascript">
+                        $(function () {
+                            $(".box ul li").hover(function () {
+                                $(this).addClass("on").siblings().removeClass("on");
+
+                            })
+                        })
+
+                    </script>
+
+
+
+                    <b>鄰近市區</b>
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-primary text-white mb-4">
+                                <div class="card-body">西區</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="./西區.html">出發去...</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-warning text-white mb-4">
+                                <div class="card-body">西屯區</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="./西屯區.html">出發去...</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-success text-white mb-4">
+                                <div class="card-body">北屯區</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="./北屯區.html">出發去...</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-danger text-white mb-4">
+                                <div class="card-body">南區</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="./南區.html">出發去...</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+            <!-- 底部 -->
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">製作 &copy; 林韋侖 </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</body>
+
+</html>
